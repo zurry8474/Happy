@@ -1,8 +1,6 @@
 pipeline{
     agent any
-        label "node"
-    }
-   stages{
+    stages{
         stage("sonar quality check"){
             agent {
                 docker {
@@ -15,8 +13,8 @@ pipeline{
                             sh 'chmod +x gradlew'
                             sh './gradlew sonarqube'
                     }
-
-              
+                }
+               
             }
         }
     }
