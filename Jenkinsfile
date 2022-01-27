@@ -3,13 +3,27 @@ pipeline {
     
     stages {
     
-         stage('build') {
+         stage('run backend') {
+         
+             steps {
+             
+                   echo 'executing gradle'
+                 
+                   withGradle() {
+                       sh './gradlew'
+                   
+                   }
+             }
+         }
+         
+          stage('build') {
          
              steps {
              
                    echo 'building the app' 
              }
          }
+        
           stage('tests') {
          
              steps {
