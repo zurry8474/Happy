@@ -10,7 +10,7 @@ pipeline {
                    echo 'building the app' 
              }
          }
-          stage('test') {
+          stage('tests') {
          
              steps {
              
